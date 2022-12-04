@@ -3,7 +3,6 @@ import sys
 
 os.chdir(os.path.dirname(sys.argv[0]))
 
-
 def load_data():
     with open("input.txt", "r") as input_file:
         data = input_file.read().split("\n")
@@ -41,9 +40,9 @@ def get_hand(result, opponent):
     return hand
 
 # get my score
-def get_hand_score(hand):
-    score = hand_score[hand]
-    return score
+def get_hand_score(result, opponent):
+    hand = get_hand(result, opponent)
+    return hand_score[hand]
 
 if __name__ == "__main__":
     # Loop through each round and calculate total score
@@ -55,9 +54,7 @@ if __name__ == "__main__":
 
         # get score for win/loss/draw
         total_score += game_score[result]
-
         # get score for hand
-        hand = get_hand(result, opponent)
-        total_score += get_hand_score(hand)
+        total_score += get_hand_score(result, opponent)
 
     print("total_score:", total_score)
