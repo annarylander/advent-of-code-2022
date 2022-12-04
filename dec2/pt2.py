@@ -8,35 +8,35 @@ def load_data():
         data = input_file.read().split("\n")
     return data
 
-X = "X"
-Y = "Y"
-Z = "Z"
+loss = "X"
+draw = "Y"
+win = "Z"
 
-A = "A"
-B = "B"
-C = "C"
+rock = "A"
+paper = "B"
+scissor = "C"
 
-game_score = {X: 0, Y: 3, Z: 6}
-hand_score = {A: 1, B: 2, C: 3}
+game_score = {loss: 0, draw: 3, win: 6}
+hand_score = {rock: 1, paper: 2, scissor: 3}
 
-# get my hand
+# get mdraw hand
 def get_hand(result, opponent):
-    if result == Y:
+    if result == draw:
         hand = opponent
-    elif result == Z:
-        if opponent == A:
-            hand = B
-        elif opponent == B:
-            hand = C
-        elif opponent == C:
-            hand = A
-    elif result == X:
-        if opponent == A:
-            hand = C
-        elif opponent == B:
-            hand = A
-        elif opponent == C:
-            hand = B
+    elif result == win:
+        if opponent == rock:
+            hand = paper
+        elif opponent == paper:
+            hand = scissor
+        elif opponent == scissor:
+            hand = rock
+    elif result == loss:
+        if opponent == rock:
+            hand = scissor
+        elif opponent == paper:
+            hand = rock
+        elif opponent == scissor:
+            hand = paper
     return hand
 
 # get my score
