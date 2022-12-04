@@ -52,8 +52,6 @@ if __name__ == "__main__":
     for line in data:
         opponent = line[0]
         result = line[2]
-        print("result:", result)
-        print("opponent:", opponent)
 
         # get score for win/loss/draw
         total_score += game_score[result]
