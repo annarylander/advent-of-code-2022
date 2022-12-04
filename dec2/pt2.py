@@ -19,7 +19,7 @@ scissor = "C"
 game_score = {loss: 0, draw: 3, win: 6}
 hand_score = {rock: 1, paper: 2, scissor: 3}
 
-# get mdraw hand
+# get my hand
 def get_hand(result, opponent):
     if result == draw:
         hand = opponent
